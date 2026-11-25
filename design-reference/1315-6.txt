@@ -1,0 +1,104 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/df254be3-339f-49b9-adc0-91ff9080b5ff";
+const img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2562 = `${assetPathPrefix}/f482e.png`;
+const imgHouse1 = `${assetPathPrefix}/2278f.png`;
+const imgRectangle3 = `${assetPathPrefix}/062cd.png`;
+const imgRectangle7 = `${assetPathPrefix}/4f24f.png`;
+const img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2551 = `${assetPathPrefix}/18aff.png`;
+const imgEllipse5 = `${assetPathPrefix}/fdd59.svg`;
+
+export default function Writing() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="1315:6" data-name="Writing">
+      <div className="absolute h-[52px] left-[109px] top-[124px] w-[148px]" data-node-id="1360:248">
+        <div className="absolute inset-[-134.62%_-47.3%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse5} />
+        </div>
+      </div>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[972px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1326:21" style={{ fontVariationSettings: '"opsz" 9' }}>
+        Projects
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:Bold'] font-bold leading-[normal] left-[115px] text-[#3771c8] text-[40px] top-[124px] whitespace-nowrap" data-node-id="1326:26" style={{ fontVariationSettings: '"opsz" 14' }}>
+        Writing
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[1105px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1326:22" style={{ fontVariationSettings: '"opsz" 9' }}>
+        Art
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:Bold'] font-bold leading-[normal] left-[1200px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1326:23" style={{ fontVariationSettings: '"opsz" 14' }}>
+        Writing
+      </p>
+      <div className="[word-break:break-word] absolute font-['DM_Sans:Light'] font-light h-[54px] leading-[0] left-[328px] text-[20px] text-black top-[817.83px] w-[369px] whitespace-pre-wrap" data-node-id="1333:157" style={{ fontVariationSettings: '"opsz" 14' }}>
+        <p className="mb-0">
+          <span className="[word-break:break-word] font-['DM_Sans:Bold'] font-bold leading-[normal]" style={{ fontVariationSettings: '"opsz" 14' }}>
+            ziyou’s collection
+          </span>
+          <span className="leading-[normal]">{`: `}</span>
+        </p>
+        <p className="leading-[normal]">poem, photography, writing</p>
+      </div>
+      <div className="[word-break:break-word] absolute font-['DM_Sans:Light'] font-light h-[54px] leading-[0] left-[764px] text-[20px] text-black top-[817.83px] w-[369px] whitespace-pre-wrap" data-node-id="1333:158" style={{ fontVariationSettings: '"opsz" 14' }}>
+        <p className="mb-0">
+          <span className="[word-break:break-word] font-['DM_Sans:Bold'] font-bold leading-[normal]" style={{ fontVariationSettings: '"opsz" 14' }}>
+            ziyou’s collection
+          </span>
+          <span className="leading-[normal]">{`: `}</span>
+        </p>
+        <p className="leading-[normal]">poem, photography, writing</p>
+      </div>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[1341px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1326:24" style={{ fontVariationSettings: '"opsz" 9' }}>
+        About
+      </p>
+      <div className="absolute flex h-[342.166px] items-center justify-center left-[1109.4px] top-[436.84px] w-[291.716px]" data-node-id="1333:159">
+        <div className="-scale-y-100 flex-none rotate-[-166.8deg]">
+          <div className="h-[297.538px] opacity-50 relative shadow-[0px_11px_11.3px_0px_rgba(0,0,0,0.25)] w-[229.836px]" data-name="1790446843473-ded74320-24da-419c-bf79-81ef03e3bd25_6 2">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2562} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[346.894px] items-center justify-center left-[107.72px] top-[406.85px] w-[299.027px]" data-node-id="1333:156">
+        <div className="-scale-y-100 flex-none rotate-165">
+          <div className="h-[297.538px] opacity-50 relative shadow-[0px_12px_14.6px_0px_rgba(0,0,0,0.25)] w-[229.836px]" data-name="1790446843473-ded74320-24da-419c-bf79-81ef03e3bd25_6 1">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2562} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute h-[56px] left-[849px] top-[48px] w-[67px]" data-node-id="1332:68" data-name="house 1">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHouse1} />
+      </div>
+      <div className="absolute h-[504px] left-[328px] pointer-events-none rounded-tl-[33px] shadow-[0px_15px_12.7px_0px_rgba(0,0,0,0.25)] top-[275.83px] w-[371px]" data-node-id="1332:93">
+        <img alt="" className="absolute inset-0 max-w-none object-cover rounded-tl-[33px] size-full" src={imgRectangle3} />
+        <div className="absolute inset-0 rounded-[inherit] shadow-[inset_-15px_4px_11.6px_0px_rgba(0,0,0,0.19)]" />
+      </div>
+      <div className="absolute flex h-[509.66px] items-center justify-center left-[760.24px] top-[273px] w-[388.519px]" data-node-id="1332:95">
+        <div className="flex-none rotate-[0.86deg]">
+          <div className="h-[504px] pointer-events-none relative rounded-tl-[33px] shadow-[0px_15px_12.7px_0px_rgba(0,0,0,0.25)] w-[381px]">
+            <img alt="" className="absolute inset-0 max-w-none object-bottom rounded-tl-[33px] size-full" src={imgRectangle7} />
+            <div className="absolute inset-0 rounded-[inherit] shadow-[inset_-15px_4px_14.8px_0px_rgba(0,0,0,0.13)]" />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[225.76px] items-center justify-center left-[-36px] top-[567.67px] w-[195.01px]" data-node-id="1333:155">
+        <div className="flex-none rotate-[-15.35deg]">
+          <div className="h-[193.156px] opacity-50 relative shadow-[0px_12px_14.6px_0px_rgba(0,0,0,0.25)] w-[149.206px]" data-name="1790446843473-ded74320-24da-419c-bf79-81ef03e3bd25_5 1">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2551} />
+          </div>
+        </div>
+      </div>
+      <div className="absolute flex h-[223.296px] items-center justify-center left-[1356.58px] top-[597.7px] w-[191.164px]" data-node-id="1333:160">
+        <div className="flex-none rotate-[13.87deg]">
+          <div className="h-[193.156px] opacity-50 relative shadow-[0px_11px_11.3px_0px_rgba(0,0,0,0.25)] w-[149.206px]" data-name="1790446843473-ded74320-24da-419c-bf79-81ef03e3bd25_5 2">
+            <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={img1790446843473Ded7432024Da419CBf7981Ef03E3Bd2551} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

@@ -1,0 +1,99 @@
+const assetPathPrefix = "https://www.figma.com/api/mcp/asset/23bf02b3-eb30-4b89-847f-2ccf5f133666";
+const imgHouse1 = `${assetPathPrefix}/2278f.png`;
+const imgEllipse5 = `${assetPathPrefix}/45e16.svg`;
+const imgEllipse1 = `${assetPathPrefix}/1b4f7.svg`;
+const imgAkarIconsLinkedinBoxFill = `${assetPathPrefix}/b8d89.svg`;
+const imgDashiconsEmail = `${assetPathPrefix}/6048b.svg`;
+const imgAntDesignInstagramFilled = `${assetPathPrefix}/e1b6f.svg`;
+
+export default function Home() {
+  return (
+    <div className="bg-white relative size-full" data-node-id="1311:3" data-name="Home">
+      <div className="absolute h-[289px] left-[172px] top-[481px] w-[329px]" data-node-id="1334:227">
+        <div className="absolute inset-[-103.81%_-91.19%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse5} />
+        </div>
+      </div>
+      <div className="absolute h-[289px] left-[425px] top-[336px] w-[329px]" data-node-id="1334:228">
+        <div className="absolute inset-[-103.81%_-91.19%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse5} />
+        </div>
+      </div>
+      <div className="absolute h-[289px] left-[685px] top-[459px] w-[329px]" data-node-id="1334:229">
+        <div className="absolute inset-[-103.81%_-91.19%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse5} />
+        </div>
+      </div>
+      <div className="absolute h-[289px] left-[975px] top-[362px] w-[329px]" data-node-id="1334:230">
+        <div className="absolute inset-[-103.81%_-91.19%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse5} />
+        </div>
+      </div>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[972px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1316:8" style={{ fontVariationSettings: '"opsz" 9' }}>
+        Projects
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[1105px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1316:9" style={{ fontVariationSettings: '"opsz" 9' }}>
+        Art
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[1200px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1316:10" style={{ fontVariationSettings: '"opsz" 9' }}>
+        Writing
+      </p>
+      <p className="[word-break:break-word] absolute font-['DM_Sans:9pt_Regular'] font-normal leading-[normal] left-[1341px] text-[23px] text-black top-[61px] whitespace-nowrap" data-node-id="1316:11" style={{ fontVariationSettings: '"opsz" 9' }}>
+        About
+      </p>
+      <div className="absolute h-[36px] left-[221px] top-[675px] w-[223px]" data-node-id="1319:2">
+        <div className="absolute inset-[0_-4.53%_-69.72%_-4.53%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse1} />
+        </div>
+      </div>
+      <div className="absolute h-[36px] left-[492px] top-[521px] w-[223px]" data-node-id="1319:3">
+        <div className="absolute inset-[0_-4.53%_-69.72%_-4.53%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse1} />
+        </div>
+      </div>
+      <div className="absolute h-[36px] left-[753px] top-[657px] w-[223px]" data-node-id="1319:4">
+        <div className="absolute inset-[0_-4.53%_-69.72%_-4.53%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse1} />
+        </div>
+      </div>
+      <div className="absolute h-[36px] left-[1032px] top-[503px] w-[223px]" data-node-id="1319:5">
+        <div className="absolute inset-[0_-4.53%_-69.72%_-4.53%]">
+          <img alt="" className="block max-w-none size-full" src={imgEllipse1} />
+        </div>
+      </div>
+      <div className="absolute left-[1370px] size-[37px] top-[870px]" data-node-id="1326:32" data-name="akar-icons:linkedin-box-fill">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAkarIconsLinkedinBoxFill} />
+      </div>
+      <div className="absolute left-[1218px] size-[37px] top-[870px]" data-node-id="1326:36" data-name="dashicons:email">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgDashiconsEmail} />
+      </div>
+      <div className="absolute left-[1293px] size-[38px] top-[869px]" data-node-id="1326:38" data-name="ant-design:instagram-filled">
+        <img alt="" className="absolute block inset-0 max-w-none size-full" src={imgAntDesignInstagramFilled} />
+      </div>
+      <p className="[word-break:break-word] absolute font-['Micro_5:Regular'] leading-[normal] left-[279px] not-italic text-[#125485] text-[400px] text-shadow-[0px_4px_6px_rgba(255,255,255,0.74)] top-[404px] whitespace-nowrap" data-node-id="1332:54">
+        Y
+      </p>
+      <p className="[word-break:break-word] absolute font-['Micro_5:Regular'] leading-[normal] left-[809px] not-italic text-[#125485] text-[400px] top-[387px] whitespace-nowrap" data-node-id="1332:59">
+        Y
+      </p>
+      <p className="[word-break:break-word] absolute font-['Micro_5:Regular'] leading-[normal] left-[554px] not-italic text-[#125485] text-[400px] top-[251px] whitespace-nowrap" data-node-id="1332:58">
+        o
+      </p>
+      <p className="[word-break:break-word] absolute font-['Micro_5:Regular'] leading-[normal] left-[1096px] not-italic text-[#125485] text-[400px] top-[226px] whitespace-nowrap" data-node-id="1332:60">
+        o
+      </p>
+      <div className="absolute h-[56px] left-[849px] shadow-[0px_4px_6.6px_0px_white,0px_7px_16.8px_0px_#125485] top-[48px] w-[67px]" data-node-id="1332:66" data-name="house 1">
+        <img alt="" className="absolute inset-0 max-w-none object-cover pointer-events-none size-full" src={imgHouse1} />
+      </div>
+    </div>
+  );
+}
+SUPER CRITICAL: The generated React+Tailwind code MUST be converted to match the target project's technology stack and styling system.
+1. Analyze the target codebase to identify: technology stack, styling approach, component patterns, and design tokens
+2. Convert React syntax to the target framework/library
+3. Transform all Tailwind classes to the target styling system while preserving exact visual design
+4. Follow the project's existing patterns and conventions
+DO NOT install any Tailwind as a dependency unless the user instructs you to do so.
+
+Node ids have been added to the code as data attributes, e.g. `data-node-id="1:2"`.
+The generated code contains image and SVG URL constants, e.g. const image = `${assetPathPrefix}/<asset file name>`, where assetPathPrefix is declared once at the top of the code and every asset URL interpolates it. These URLs are temporary download sources and expire after 7 days. Download each asset into the project with curl -L, then replace its URL in the generated code with a reference to the downloaded asset. Never use the temporary URLs as runtime image sources.

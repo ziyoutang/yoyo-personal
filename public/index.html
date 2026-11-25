@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Yoyo (Ziyou) Tang — UI/UX designer and studio artist. Explore projects, art, and writing.">
+  <meta name="theme-color" content="#ffffff">
+  <script>
+    try {
+      if (localStorage.getItem('portfolio-theme') === 'dark') document.documentElement.dataset.theme = 'dark';
+    } catch {}
+  </script>
+  <title>Yoyo — Ziyou Tang</title>
+  <link rel="icon" href="/assets/2278f.png">
+  <link rel="stylesheet" href="/fonts.css">
+  <link rel="stylesheet" href="/styles.css?v=20261104-theme-reveal">
+  <link rel="stylesheet" href="/gallery.css?v=20261123-cover-sizing">
+  <script type="module" src="/app.js?v=20261125-github"></script>
+</head>
+<body>
+  <section class="viewport-notice" role="main" aria-labelledby="viewport-notice-title">
+    <h1 id="viewport-notice-title"><span class="viewport-desktop">Please view this site in full screen</span><span class="viewport-phone">Please view this site on a laptop</span></h1>
+    <p>Support for phones and smaller windows is coming soon.</p>
+  </section>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="site-shell">
+    <header class="site-header">
+      <nav aria-label="Main navigation">
+        <a class="home-link" href="#/" aria-label="Yoyo home"><img src="/assets/2278f.png" alt="" width="67" height="56"></a>
+        <a href="#/projects">Projects</a><a href="#/art">Art</a><a href="#/writing">Writing</a><a href="#/about">About</a>
+      </nav>
+    </header>
+    <main id="main" tabindex="-1"></main>
+    <footer class="socials" aria-label="Contact links"></footer>
+  </div>
+  <button type="button" class="theme-toggle" data-theme-toggle>
+    <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path class="theme-moon" d="M20.6 14.1A8.8 8.8 0 0 1 9.9 3.4a8.8 8.8 0 1 0 10.7 10.7Z"/>
+      <g class="theme-sun"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4m0-14.2-1.4 1.4M6.3 17.7l-1.4 1.4"/></g>
+    </svg>
+    <span>Dark mode</span>
+  </button>
+  <dialog id="image-dialog" aria-label="Artwork preview"><button class="close-dialog" aria-label="Close preview">×</button><img alt=""><p></p></dialog>
+</body>
+</html>

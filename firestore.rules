@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function verifiedGoogle() {
+      return request.auth != null
+        && request.auth.token.email is string
+        && request.auth.token.email_verified == true
+        && request.auth.token.firebase.sign_in_provider == 'google.com';
+    }
+    function approved() {
+      return verifiedGoogle()
+        && get(/databases/$(database)/documents/allowedUsers/$(request.auth.token.email)).data.enabled == true;
+    }
+    function editor() {
+      return approved()
+        && get(/databases/$(database)/documents/allowedUsers/$(request.auth.token.email)).data.canEditGallery == true;
+    }
+    function safeId(id) {
+      return id is string && id.size() > 0 && id.size() <= 100 && id.matches('^[a-zA-Z0-9_-]+$');
+    }
+    function boundedText(value, maximum) {
+      return value is string && value.size() <= maximum;
+    }
+    function validArtwork(data, existingImageRef) {
+      return data.keys().hasAll(['title', 'caption', 'alt', 'category', 'visible', 'imageKind', 'imageRef', 'overlayText', 'overlayYear', 'order', 'revision'])
+        && data.keys().hasOnly(['title', 'caption', 'alt', 'category', 'visible', 'imageKind', 'imageRef', 'overlayText', 'overlayYear', 'order', 'revision'])
+        && boundedText(data.title, 160) && boundedText(data.caption, 3000)
+        && boundedText(data.alt, 500) && boundedText(data.overlayText, 100)
+        && boundedText(data.overlayYear, 20)
+        && data.category in ['Installation', 'Multi-Media', 'Paintings', 'Illustrations', 'Film']
+        && data.visible is bool && data.order is number && data.order >= 0 && data.order <= 1000000000000000
+        && data.revision is int && data.revision >= 1
+        && ((data.imageKind == 'bundled' && data.imageRef in ['f50dd.png', 'aa09b.png', '60cc7.png', 'f61dc.png'])
+          || (data.imageKind == 'uploaded' && safeId(data.imageRef)
+            && (data.imageRef == existingImageRef
+              || exists(/databases/$(database)/documents/galleryImages/$(data.imageRef)))));
+    }
+    function layoutChanged(category, id, containsItem) {
+      let before = get(/databases/$(database)/documents/galleryLayouts/$(category)).data;
+      let after = getAfter(/databases/$(database)/documents/galleryLayouts/$(category)).data;
+      return after.revision == before.revision + 1
+        && (id in after.slots) == containsItem;
+    }
+    function addedItemValid(ids, category) {
+      return ids.size() == 0 || (ids.size() == 1 && safeId(ids[0])
+        && getAfter(/databases/$(database)/documents/galleryItems/$(ids[0])).data.category == category);
+    }
+    function removedItemValid(ids, category) {
+      return ids.size() == 0 || (ids.size() == 1 && safeId(ids[0])
+        && (!existsAfter(/databases/$(database)/documents/galleryItems/$(ids[0]))
+          || getAfter(/databases/$(database)/documents/galleryItems/$(ids[0])).data.category != category));
+    }
+    function validLayout(category) {
+      let data = request.resource.data;
+      let oldIds = resource.data.slots.removeAll([null]);
+      let newIds = data.slots.removeAll([null]);
+      return category in ['Installation', 'Multi-Media', 'Paintings', 'Illustrations', 'Film']
+        && data.keys().hasAll(['slots', 'revision']) && data.keys().hasOnly(['slots', 'revision'])
+        && data.slots is list && data.slots.size() >= 4 && data.slots.size() <= 200 && data.slots.size() % 4 == 0
+        && data.revision is int && data.revision == resource.data.revision + 1
+        && newIds.size() == newIds.toSet().size()
+        && addedItemValid(newIds.removeAll(oldIds), category)
+        && removedItemValid(oldIds.removeAll(newIds), category);
+    }
+    match /galleryLayouts/{category} {
+      allow read: if approved();
+      // Layouts are initialized once by the administrator. Membership changes must
+      // accompany the corresponding artwork create, delete, or category change.
+      allow update: if editor() && validLayout(category);
+    }
+    match /allowedUsers/{email} {
+      allow get: if verifiedGoogle() && request.auth.token.email == email;
+    }
+    match /portfolioKeys/{version} {
+      allow get: if approved();
+    }
+    match /siteContent/about {
+      function validAbout() {
+        let data = request.resource.data;
+        return data.keys().hasAll(['heading', 'body', 'revision'])
+          && data.keys().hasOnly(['heading', 'body', 'revision'])
+          && boundedText(data.heading, 160) && boundedText(data.body, 10000)
+          && data.revision is int && data.revision >= 1 && data.revision <= 9007199254740991;
+      }
+      allow get: if approved();
+      allow create: if editor() && validAbout() && request.resource.data.revision == 1;
+      allow update: if editor() && validAbout() && request.resource.data.revision == resource.data.revision + 1;
+    }
+    match /galleryItems/{id} {
+      allow read: if approved();
+      allow create: if editor() && safeId(id) && validArtwork(request.resource.data, '') && request.resource.data.revision == 1
+        && layoutChanged(request.resource.data.category, id, true);
+      allow update: if editor() && safeId(id) && validArtwork(request.resource.data, resource.data.imageKind == 'uploaded' ? resource.data.imageRef : '') && request.resource.data.revision == resource.data.revision + 1
+        && request.resource.data.order == resource.data.order
+        && (request.resource.data.category == resource.data.category
+          || (layoutChanged(resource.data.category, id, false) && layoutChanged(request.resource.data.category, id, true)));
+      allow delete: if editor() && layoutChanged(resource.data.category, id, false);
+    }
+    match /galleryImages/{id} {
+      allow get: if approved();
+      allow create: if editor() && safeId(id)
+        && request.resource.data.keys().hasAll(['base64', 'mimeType', 'width', 'height'])
+        && request.resource.data.keys().hasOnly(['base64', 'mimeType', 'width', 'height'])
+        && request.resource.data.base64 is string
+        && request.resource.data.base64.size() > 0 && request.resource.data.base64.size() <= 819200
+        && request.resource.data.mimeType in ['image/webp', 'image/gif', 'video/mp4', 'video/webm']
+        && request.resource.data.width is int && request.resource.data.width >= 1 && request.resource.data.width <= 1600
+        && request.resource.data.height is int && request.resource.data.height >= 1 && request.resource.data.height <= 1600;
+    }
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
